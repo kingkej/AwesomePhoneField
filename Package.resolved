@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "IsoCountryCodes",
+        "repositoryURL": "https://github.com/funky-monkey/IsoCountryCodes.git",
+        "state": {
+          "branch": null,
+          "revision": "c571f2133f32d56f6ef4af0d210bd1fc7adf6a02",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "package": "PhoneNumberKit",
+        "repositoryURL": "https://github.com/marmelroy/PhoneNumberKit.git",
+        "state": {
+          "branch": null,
+          "revision": "fc8b12831c166e7851c341c2ac5a120c8716304a",
+          "version": "3.3.4"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
