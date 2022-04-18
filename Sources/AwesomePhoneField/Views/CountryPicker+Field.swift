@@ -77,7 +77,6 @@ struct CountryPickerView: View {
     @Binding var country: CountryData
     @Binding var isPresented: Bool
     @State var searchText = ""
-    @State var searching = false
     let countries: [CountryData]
     
     var body: some View {
@@ -94,11 +93,8 @@ struct CountryPickerView: View {
             Section {
                 HStack {
                     Image(systemName: "magnifyingglass")
-                    TextField("Search ..", text: $searchText) { startedEditing in
+                    TextField("Search", text: $searchText) { startedEditing in
                         if startedEditing {
-                            withAnimation {
-                                searching = true
-                            }
                         }
                     } onCommit: {
                         withAnimation {
