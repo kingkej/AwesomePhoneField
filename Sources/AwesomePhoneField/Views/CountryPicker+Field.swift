@@ -87,6 +87,7 @@ struct CountryPickerView: View {
                 HStack {
                     Text("\(country.isoCode.getFlag())")
                     Text("+\(country.phoneCode)")
+                        .bold()
                     Text("\(country.localizedName)")
                 }
             }
@@ -101,7 +102,7 @@ struct CountryPickerView: View {
                         }
                     } onCommit: {
                         withAnimation {
-                            searching = false
+                            UIApplication.shared.dismissKeyboard()
                         }
                     }
                 }
@@ -110,7 +111,7 @@ struct CountryPickerView: View {
             }
                 
             ForEach(countries.filter({ (cnt: CountryData) -> Bool in
-                return cnt.localizedName.hasPrefix(searchText) || searchText == ""
+                return cnt.localizedName.lowercased().hasPrefix(searchText.lowercased()) || searchText == ""
             })) { cnt in
                 Button(action: {
                     modifyCountry(newCountry: cnt)
@@ -118,6 +119,7 @@ struct CountryPickerView: View {
                     HStack {
                         Text("\(cnt.isoCode.getFlag())")
                         Text("+\(cnt.phoneCode)")
+                            .bold()
                         Spacer()
                         Text("\(cnt.localizedName)")
                         }
