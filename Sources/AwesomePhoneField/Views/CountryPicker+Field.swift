@@ -37,8 +37,8 @@ struct FieldPlusButtonView: View {
         }
         .onChange(of: phoneNumber) { _newValue in
             var newValue = _newValue
-            if phoneNumber.count <= 4 && newValue.count > phoneNumber.count + 7 {
-                let index = phoneNumber.index(phoneNumber.startIndex, offsetBy: phoneNumber.count)
+            if _phoneNumber.count <= 4 && newValue.count > _phoneNumber.count + 7 {
+                let index = _phoneNumber.index(_phoneNumber.startIndex, offsetBy: _phoneNumber.count)
                 newValue = String(newValue[index...])
             }
             var normalizedNumber = ""
