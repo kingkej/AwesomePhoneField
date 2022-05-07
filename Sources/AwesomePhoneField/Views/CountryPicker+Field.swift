@@ -35,10 +35,11 @@ struct FieldPlusButtonView: View {
         .sheet(isPresented: $showingSheet) {
             CountryPickerView(country: $country, isPresented: $showingSheet, countries: countries)
         }
-        .onChange(of: phoneNumber) { newValue in
-            if phoneNumber.count <= 3 && newValue.count > 6 {
-                phoneNumber = ""
-                phoneNumber = newValue
+        .onChange(of: phoneNumber) { _newValue in
+            var newValue = _newValue
+            if phoneNumber.count <= 4 && newValue.count > phoneNumber.count + 7 {
+                let index = phoneNumber.index(phoneNumber.startIndex, offsetBy: phoneNumber.count)
+                newValue = String(newValue[index...])
             }
             var normalizedNumber = ""
             for i in newValue {
