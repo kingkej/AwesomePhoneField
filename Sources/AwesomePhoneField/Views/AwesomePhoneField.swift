@@ -17,6 +17,7 @@ public struct AwesomePhoneFieldView: View {
                 let localeIdentifier: String = NSLocale.current.regionCode ?? "US"
                 if let c = countries.first(where: { $0.isoCode == localeIdentifier }) {
                     country.phoneCode = "\(c.phoneCode)"
+                    phoneNumber = "+\(c.phoneCode)"
                     }
                 country.isoCode = localeIdentifier
             })
