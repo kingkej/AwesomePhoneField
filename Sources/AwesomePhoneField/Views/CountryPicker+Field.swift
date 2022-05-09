@@ -55,7 +55,7 @@ struct FieldPlusButtonView: View {
                 updateFlag(phoneNum: String(rawCountryCode))
             }
             
-            if (phoneNumber.isEmpty && !normalizedNumber.starts(with: "+")) {
+            if (phoneNumber.isEmpty || !normalizedNumber.starts(with: "+")) {
                 normalizedNumber = "+\(normalizedNumber)"
             }
             phoneNumber = PartialFormatter().formatPartial(normalizedNumber)
