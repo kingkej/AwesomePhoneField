@@ -60,10 +60,10 @@ struct FieldPlusButtonView: View {
             }
             phoneNumber = PartialFormatter().formatPartial(normalizedNumber)
         }
-        .onChange(of: country.phoneCode) { newValue in
-            //phoneNumber = ""
-            phoneNumber = "+\(newValue)"
-        }
+//        .onChange(of: country.phoneCode) { newValue in
+//            //phoneNumber = ""
+//            phoneNumber = "+\(newValue)"
+//        }
     }
     func updateFlag(phoneNum: String) {
         for i in (1 ... phoneNum.count).reversed() {
