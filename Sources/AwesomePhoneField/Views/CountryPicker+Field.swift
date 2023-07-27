@@ -31,7 +31,6 @@ struct FieldPlusButtonView: View {
             TextField("+", text: $phoneNumber)
                 .keyboardType(.phonePad)
         }
-        .font(.system(size: 30, weight: .bold, design: .rounded))
         .sheet(isPresented: $showingSheet) {
             CountryPickerView(country: $country, isPresented: $showingSheet, countries: countries)
         }
